@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - FabricJS editor</title>
+  <title>STKRS</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css'>
 <link rel='stylesheet' href='https://rawgit.com/ONE-LOGIC/md-color-menu/master/md-color-menu.css'><link rel="stylesheet" href="./style.css">
@@ -13,16 +13,16 @@
   <div ng-controller="MainController as main" layout="row">
     <div>
       <md-button class="md-raised" ng-click="main.addImage($event)">Add Image</md-button>
-      <md-button class="md-raised md-warn" ng-click="main.remove()">Remove</md-button>
-      <div layout="row">
-          <md-button class="md-raised btn-sm" ng-click="main.activeObject.bringForward()">↑
+      
+      <md-button class="md-raised" ng-click="main.activeObject.bringForward()">↑
             <md-tooltip md-direction="bottom">Bring forward</md-tooltip>
           </md-button>
 
-          <md-button class="md-raised btn-sm" ng-click="main.activeObject.sendBackwards()">↓
+          <md-button class="md-raised" ng-click="main.activeObject.sendBackwards()">↓
             <md-tooltip md-direction="bottom">Send backwards</md-tooltip>
           </md-button>
-        </div>
+          <md-button class="md-raised md-warn" ng-click="main.remove()">Remove</md-button>
+
       <canvas id="c"></canvas>
     </div>
   </div>
