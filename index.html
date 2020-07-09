@@ -1,40 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>STKRS</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css'>
-<link rel='stylesheet' href='https://rawgit.com/ONE-LOGIC/md-color-menu/master/md-color-menu.css'><link rel="stylesheet" href="./style.css">
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>3</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
+	<style>
+		body, html {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
 </head>
 <body>
-<div ng-app="app">
-  <div ng-controller="MainController as main" layout="row">
-    <div>
-      <md-button class="md-raised" ng-click="main.addImage($event)">Add Image</md-button>
-      
-      <md-button class="md-raised" ng-click="main.activeObject.bringForward()">↑
-            <md-tooltip md-direction="bottom">Bring forward</md-tooltip>
-          </md-button>
 
-          <md-button class="md-raised" ng-click="main.activeObject.sendBackwards()">↓
-            <md-tooltip md-direction="bottom">Send backwards</md-tooltip>
-          </md-button>
-          <md-button class="md-raised md-warn" ng-click="main.remove()">Remove</md-button>
-      <canvas id="c"></canvas>
-    </div>
-  </div>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-aria.min.js'></script>
-<script src='https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.3/fabric.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
-<script src='https://rawgit.com/ONE-LOGIC/md-color-menu/master/md-color-menu.js'></script><script  src="./script.js"></script>
+<pixie-editor></pixie-editor>
 
+<script src="scripts.js"></script>
+
+		<script>
+            var pixie = new Pixie({
+            	tools: {
+            		export: {
+            			defaultFormat: 'png', //png, jpeg or json
+            			defaultName: 'stkr',
+            			defaultQuality: 1,
+            		}
+            	},
+            	objectDefaults: {
+            		cornerSize: 30,
+            	},
+            	ui: {
+            		openImageDialog: {
+            			show: false,
+            		},            		
+            		nav: {
+            			replaceDefault: true,            			
+            			position: 'none'
+            		}
+            	}
+            });
+        </script>
 </body>
 </html>
